@@ -5,11 +5,14 @@ import Counter from './counter/Counter'
 import Calculator from './counter/Calculator';
 import BackGroundChanger from './counter/BackGroundChanger'
 import PasswordGenerator from './counter/PasswordGenerator'
+import Pass from './counter/Pass';
+
 function App() {
 
   return (
     <>
-      <PasswordGenerator />
+      <Pass />
+      {/* <PasswordGenerator /> */}
       {/* <BackGroundChanger col="black" /> */}
       {/* <Calculator /> */}
       {/* <Card heading="Hello World" number={num} btnText="Click-ME" />
