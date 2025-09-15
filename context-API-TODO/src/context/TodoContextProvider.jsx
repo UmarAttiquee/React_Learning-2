@@ -2,15 +2,9 @@ import React, { useEffect, useState } from 'react';
 import TodoContext from './TodoContext';
 
 function TodoContextProvider({ children }) {
-  const [todos, setTodos] = useState(() => {
-    try {
-      const localData = localStorage.getItem("todos");
-      return localData ? JSON.parse(localData) : [];
-    } catch (err) {
-      console.error("Error reading todos from localStorage:", err);
-      return [];
-    }
-  });
+  const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem("todos")) || []);
+
+
   const addTodo = (newTodo) => {
     setTodos((prev) => [{ id: Date.now(), completed: false, ...newTodo }, ...prev]);
   };
